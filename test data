@@ -1,0 +1,131 @@
+'''
+b g r c y m k
+
+c y g
+r m b
+'''
+
+
+Test 1
+
+acc = np.array([82.906, 91.026, 93.163, 95.727])
+x = np.array([10, 20, 30, 40])
+sd = np.array([3.917, 1.282, 1.480, 2.669])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'c', color = 'r', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Number of Output Frames', fontsize = f)
+plt.axis([0, 40, 0, 100])
+
+
+Test 2 BAR
+
+acc = np.array([94.445, 48.718])
+ind = np.arange(len(acc))
+sd = np.array([3.226, 0.000])      
+peakval = ['94.445','48.718'] 
+
+stds    = [(0,0), sd] # Standard deviation Data
+width = 0.3
+colours = ['red','blue']
+
+plt.figure()
+plt.bar(ind, acc, width, color=colours, align='center', yerr=stds, ecolor='k',error_kw=dict(lw=4, capsize=14, capthick=3))
+plt.ylabel('Performance Accuracy', fontsize = f)
+plt.yticks(fontsize=f1)
+plt.xticks(ind,('Random Split', 'Split by-person'), fontsize = f)
+def autolabel(bars,peakval):
+    for ii,bar in enumerate(bars):
+        height = bars[ii]
+        plt.text(ind[ii], height-8, '%s'% (peakval[ii]), ha='center', va='bottom', fontsize = f)
+autolabel(acc,peakval) 
+plt.show()
+
+
+
+Test 4
+
+acc = np.array([82.906,87.607,90.599,86.325,91.453,93.163,93.590,85.470,88.889,96.581,99.573,94.445,91.453,91.026,97.436,97.863,87.607,84.615,87.607,91.453,91.881])
+x = np.arange(21)
+sd = np.array([2.669,0.741,2.669,4.122,3.917,1.480,3.392,4.121,0.740,2.669,0.740,2.961,3.917,3.392,0.000,0.740,1.959,2.220,3.917,1.958,1.958])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'y', color = 'm', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Number of Prepended Frames', fontsize = f)
+plt.axis([0, 20, 0, 100])
+
+
+Test 5
+
+acc = np.array([97.009,91.453,91.881,91.881,85.897,91.026,82.906,89.316,93.163,91.453,84.615,87.179,88.889,91.453,97.436,92.735,90.171,97.863,98.291,95.727,98.718])
+x = np.arange(21)
+sd = np.array([1.958,1.958,1.480,3.226,2.220,3.392,3.226,1.959,2.961,2.669,3.392,2.221,3.917,3.701,1.282,3.226,3.227,1.958,1.480,3.226,0.000])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'g', color = 'b', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Number of Prepended Frames', fontsize = f)
+plt.axis([0, 20, 0, 100])
+
+
+Test 6  BAR
+
+acc = np.array([98.718,26.068])
+ind = np.arange(len(acc))
+sd = np.array([1.282, 4.854])     
+peakval = ['98.718','26.068'] 
+
+stds    = [(0,0), sd] # Standard deviation Data
+width = 0.3
+colours = ['red','blue']
+
+plt.figure()
+plt.bar(ind, acc, width, color=colours, align='center', yerr=stds, ecolor='k',error_kw=dict(lw=4, capsize=14, capthick=3))
+plt.ylabel('Performance Accuracy', fontsize = f)
+plt.yticks(fontsize=f1)
+plt.xticks(ind,("40th frame", "80th frame"), fontsize = f)
+def autolabel(bars,peakval):
+    for ii,bar in enumerate(bars):
+        height = bars[ii]
+        plt.text(ind[ii], height-8, '%s'% (peakval[ii]), ha='center', va='bottom', fontsize = f)
+autolabel(acc,peakval) 
+plt.show()
+
+
+Test 7 
+
+acc = np.array([91.026,94.445,95.727,91.880,89.316,86.325,80.342,86.324,83.333,76.923,85.470,86.752,77.778,77.778,82.906,77.778,79.914,78.632,81.196,79.060,80.342])
+x = np.arange(21)
+sd = np.array([3.392,4.121,3.226,4.503,2.961,1.959,1.958,3.918,2.564,2.564,1.958,3.227,2.669,2.669,0.740,1.480,0.740,1.958,2.669,1.480,1.958])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'c', color = 'r', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Number of Prepended Frames', fontsize = f)
+plt.axis([0, 20, 0, 100])
+
+
+Test 8 
+
+acc = np.array([84.615,89.744,97.436,94.872,92.308,86.325,85.043,88.034,90.171,87.607,88.462,88.462,84.188,84.615,87.179,83.760,79.487,78.205,74.786,72.222,70.086])
+x = np.arange(21)
+sd = np.array([4.442,2.221,1.282,1.282,2.220,2.669,4.503,3.227,2.669,3.227,0.000,1.283,1.958,2.220,1.283,2.961,1.282,4.622,2.669,1.958,1.958])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'y', color = 'm', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Number of Prepended Frames', fontsize = f)
+plt.axis([0, 20, 0, 100])
+
+
+Test 9
+
+acc = np.array([94.445,91.026,91.453,83.333,74.359,75.214,75.214,77.778,67.949,65.385,65.812,64.103,61.966,54.273,61.966,67.094,74.359,74.359,66.240,84.615,85.042])
+x = np.arange(21)
+sd = np.array([2.669,3.392,0.740,3.392,3.846,4.121,4.121,0.740,3.392,3.392,2.669,3.392,4.854,3.917,3.917,2.669,4.441,5.128,3.226,1.282,1.480])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'g', color = 'b', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Random Integer N', fontsize = f)
+plt.axis([0, 20, 0, 100])
+
+Test 10
+
+acc = np.array([95.299,92.308,82.478,89.744,84.188,79.060,80.769,90.598,82.478,84.188,88.462,79.487,82.478,88.034,82.906,80.342,76.923,80.342,81.624,80.342,78.632])
+x = np.arange(21)
+sd = np.array([1.480,1.282,0.740,3.392,1.958,0.740,4.622,3.227,2.669,2.669,0.000,2.220,2.669,1.959,2.669,4.121,2.220,1.480,3.701,2.669,3.226])
+std = np.array([(np.zeros(len(sd))),(sd)])
+plt.errorbar(x,acc,yerr = std, fmt='-o', ecolor = 'c', color = 'r', mfc = 'k', capthick =3, linewidth = lw, mew=mw, capsize = 14, elinewidth=9)
+plt.xlabel('Random Integer N', fontsize = f)
+plt.axis([0, 20, 0, 100])

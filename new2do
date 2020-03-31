@@ -1,0 +1,10 @@
+
+new tasks:
+  - augment data
+  - from every sample generate several new samples and add them to the data (split train/test afterwards)
+  - define an N, every sample will have K+N frames
+  - for i = 1 to N; do "prepend i zero-frames; fill remaining frames at the end with  0 ; add new sample to database" ; done
+  - split train/.test
+  - train/test
+
+- Have a look at sensor: see if there are ROS drivers for it.. the interface is called "DepthSense"

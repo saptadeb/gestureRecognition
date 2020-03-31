@@ -1,0 +1,60 @@
+Test 1
+Accuracy vs Output frame (10-40)
+
+Test 2
+Accuracy vs split of training testing (Random split and split by person)
+
+Test 3
+changed the data size from 40 frames to 80 frames.
+- zero appended
+- zero prepended
+- first frame prepended
+- last frame appended
+
+Test 4
+Number of frames changes as x+40-1 (x in range 0 to 20)
+prepending first frame
+
+Test 5 (same as Test 4)
+prepending zero frame 
+
+Test 6 (2x)
+gesture computation at two checkpoints
+"is classification dependent on what is classified before? for each
+test sample, prepend another randomly chosen test sample and let the net
+run on the extended sample of 2X frames. Evaluating at the end of sample
+1 (frameX) and again at the end of sample 2 (frame 2X). Is
+classification on sample 2 as good as the classification on normal test
+set?"
+
+Test 7 
+total numbers of frames = 60 (fixed)
+initialised as zero frames
+video sample inserted at n index (n in range 0-20) 
+split train test 
+train
+test
+
+Test 8
+total numbers of frames = 60 (fixed)
+choosing a random number between 0-390 (total number of video samples)
+chosing the video sample at that index (chosing the random video sample)
+initialise the 60 frames as 40 frames +half of the 40 frames of the sample (40+20)
+video sample inserted at n index (n in range 0-20) 
+split train test 
+train
+test
+
+Test 9
+total numbers of frames = 60 (fixed)
+choosing a random number between 0-390 (total number of video samples)
+chosing the video sample at that index (chosing the random video sample)
+initialise the 60 frames as 40 frames +half of the 40 frames of the sample (40+20)
+N (in the range of 0-20)
+video sample inserted at a random x index (x in range 0-N) 
+split train test 
+train
+test
+
+Test 10
+Same as test 9 but for yero frames
